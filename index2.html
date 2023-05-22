@@ -1,48 +1,48 @@
 <html>
 <body>
-Hello World
-private void btn_draw_Click(object sender, EventArgs e)
-        {
-            int swidth = 800, sheight = 300;
-            float curX, curY;
-            int num;
-            string str;
+Hello World<bn>
+private void btn_draw_Click(object sender, EventArgs e)<bn>
+        {<bn>
+            int swidth = 800, sheight = 300;<bn>
+            float curX, curY;<bn>
+            int num;<bn>
+            string str;<bn>
             
-            this.ClientSize = new Size(swidth, sheight);
+            this.ClientSize = new Size(swidth, sheight);<bn>
 
-            num = int.Parse(tb_num.Text);
-
-
-            str = Convert.ToString(num, 2);
-            Console.WriteLine(str);
+            num = int.Parse(tb_num.Text);<bn>
 
 
-            curX = swidth / 2 - 50;
-            curY = -50;
+            str = Convert.ToString(num, 2);<bn>
+            Console.WriteLine(str);<bn>
 
-            Turtle.Delay = 200;
-            for (int i=0; i < str.Length; i++)
-            {
-                Turtle.PenUp();
-                Turtle.MoveTo(curX, curY);
-                Turtle.PenDown();
 
-                if ( (num & 1) == 1)
-                {
-                    Turtle.PenColor = Color.Red;
-                    Turtle.PenSize = 10;
-                    Turtle.Forward(80);
-                }
-                else
-                {
-                    Turtle.PenColor = Color.Blue;
-                    Turtle.PenSize = 5;
-                    Turtle.Forward(40);
-                }
-                curX -= 50;
-                num >>= 1;
-            }            
-        }
+            curX = swidth / 2 - 50;<bn>
+            curY = -50;<bn>
+
+            Turtle.Delay = 200;<bn>
+            for (int i=0; i < str.Length; i++)<bn>
+            {<bn>
+                Turtle.PenUp();<bn>
+                Turtle.MoveTo(curX, curY);<bn>
+                Turtle.PenDown();<bn>
+
+                if ( (num & 1) == 1)<bn>
+                {<bn>
+                    Turtle.PenColor = Color.Red;<bn>
+                    Turtle.PenSize = 10;<bn>
+                    Turtle.Forward(80);<bn>
+                }<bn>
+                else<bn>
+                {<bn>
+                    Turtle.PenColor = Color.Blue;<bn>
+                    Turtle.PenSize = 5;<bn>
+                    Turtle.Forward(40);<bn>
+                }<bn>
+                curX -= 50;<bn>
+                num >>= 1;<bn>
+            }<bn>            
+        }<bn>
 </body>
 </html>
 
