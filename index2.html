@@ -1,5 +1,48 @@
 <html>
 <body>
 Hello World
+private void btn_draw_Click(object sender, EventArgs e)
+        {
+            int swidth = 800, sheight = 300;
+            float curX, curY;
+            int num;
+            string str;
+            
+            this.ClientSize = new Size(swidth, sheight);
+
+            num = int.Parse(tb_num.Text);
+
+
+            str = Convert.ToString(num, 2);
+            Console.WriteLine(str);
+
+
+            curX = swidth / 2 - 50;
+            curY = -50;
+
+            Turtle.Delay = 200;
+            for (int i=0; i < str.Length; i++)
+            {
+                Turtle.PenUp();
+                Turtle.MoveTo(curX, curY);
+                Turtle.PenDown();
+
+                if ( (num & 1) == 1)
+                {
+                    Turtle.PenColor = Color.Red;
+                    Turtle.PenSize = 10;
+                    Turtle.Forward(80);
+                }
+                else
+                {
+                    Turtle.PenColor = Color.Blue;
+                    Turtle.PenSize = 5;
+                    Turtle.Forward(40);
+                }
+                curX -= 50;
+                num >>= 1;
+            }            
+        }
 </body>
 </html>
+
